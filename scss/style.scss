@@ -1,0 +1,658 @@
+@import '_mixins';
+@import '_header';
+@import '_slick';
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2 ,h3, h4, h5, h6 {
+    margin: 0;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1170px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.section {
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+.section-header {
+
+    &__title {
+        @include style-font(16px, #DC780B, 500, .2em, 19px);
+        text-transform: uppercase;
+        opacity: 0.7;
+    }
+
+    &__text {
+        font-family: 'Philosopher';
+        @include style-font(31px, #150C01, 700, 0, 35px);
+        padding-top: 10px;
+        text-align: center;
+    }
+}
+
+//INTRO ///////////////////////////////////////////////////////////////////////
+
+.intro {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+
+    &__img {
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        mix-blend-mode: darken;
+    }
+
+    &__body {
+        display: flex;
+        align-items: center;
+        height: 100vh;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 356px;
+        width: 555px;
+    }
+
+    &__title {
+        font-family: 'Philosopher'; 
+        @include style-font(49px, #150C01, 700, 0px, 58px);
+        
+    }
+
+    &__text {
+        @include style-font(16px, #150C01, 500, 0px, 24px);
+    }
+
+    &__item-btns {
+        display: flex;
+        justify-content: space-between;
+        width: 358px;
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background: #fff;
+        width: 170px;
+        height: 60px;
+        transition: .2s;
+        border-radius: 5px;
+        cursor: pointer;
+        border: 1px solid #DC780B;
+
+        &:hover {
+            background: #DC780B;
+            
+        }
+
+        &:hover .intro__btn-text {
+            color: #fff;
+        }
+    }
+
+    &__btn-text {
+        @include style-font(16px, #DC780B, 500, 0px, 19px);
+        text-decoration: none;
+        transition: .2s;
+    }
+}
+
+// FEATURE ///////////////////////////////////////////////////////////////////////// 
+
+.feature {
+    min-height: 333px;
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        min-height: 333px;
+    }
+
+    &__body-item {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+
+        width: 300px;
+        height: 228px;
+    }
+}
+
+.feature-item {
+
+    &__description {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__title {
+        font-family: 'Philosopher';
+        @include style-font(25px, #150C01, 700, 0, 24px);
+    }
+
+    &__text {
+        text-align: center;
+        @include style-font(16px, #150C01, 700, 0, 24px);
+        opacity: 0.7;
+    }
+}
+
+// ABOUT /////////////////////////////////////////////////////////////////////////// 
+
+.about {
+    margin-top: 100px;
+
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 500px;
+    }
+
+    &__body-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 315px;
+        width: 488px;
+
+        .section {
+
+            &__header {
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                flex-direction: column;
+            }
+        }
+
+        .section-header {
+        
+            &__text {
+                text-align: left;
+            }
+        }
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        cursor: pointer;
+        height: 42px;
+        width: 142px;
+        border-radius: 5px;
+        background: #DC780B;
+    }
+
+    &__btn-text {
+        @include style-font(16px, $color, 500, 0, 19px);
+
+    }
+}
+.about-item {
+
+    &__text {
+        @include style-font(16px, #150C01, 400, 0, 24px);
+
+    }
+}
+
+// MENU /////////////////////////////////////////////////////////////////// 
+.menu {
+    min-height: 1220px;
+    margin-top: 100px;
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        min-height: 950px;
+        margin-top: 60px;
+    }
+}
+
+.section-header {
+
+    &__description {
+        @include style-font(16px, #150C01, 400, 0, 24px);
+        max-width: 748px;
+        text-align: center;
+        margin-top: 25px;
+    }
+}
+
+.menu-list {
+
+    &__row {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+.hide-menu {
+    display: none;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 360px;
+    height: 446px;
+
+
+    &__img {
+        border-radius: 70px 10px 70px 0px;
+    }
+
+    &__description {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 25px 0 30px;
+
+    }
+
+    &__name {
+        font-family: 'Philosopher';
+        @include style-font(25px, #150C01, 700, 0, 24px);
+    }
+
+    &__price {
+        font-family: 'Philosopher';
+        @include style-font(25px, #150C01, 700, 0, 24px);
+    }
+
+    &__text {
+        @include style-font(16px, #150C01, 400, 0, 24px);
+        opacity: 0.7;
+        padding: 0 10px 0 35px;
+
+
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 34px;
+        background: #DC780B;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+
+.item-btn {
+
+    &__text {
+        color: #fff;
+        font-weight: 400;
+        font-size: 20px;
+    }
+}
+
+.menu-body {
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 42px;
+        margin-top: 50px;
+    }
+}
+
+.menu-btn {
+
+    &__text {
+        cursor: pointer;
+        @include style-font(16px, #DC780B, 500, 0, 19px);
+    }
+}
+
+// SERVICE ///////////////////////////////////////////////////////////////// 
+
+.service {
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 100px;
+    }
+}
+
+.service-body {
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 275px;
+        width: 555px;
+
+        .section {
+
+            &__header {
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+        }
+        .section-header {
+        
+            &__text {
+                text-align: left;
+            }
+        
+            &__description {
+                text-align: left;
+            }
+        }
+    }   
+}
+
+.service-item {
+
+    &__btns {
+        display: flex;
+    }
+}
+
+.service-apple {
+
+    &__btn {
+        cursor: pointer;
+        background: #150C01;
+        border-radius: 5px;
+        height: 48px;
+        width: 163px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.apple {
+
+    &__btn-text {
+        @include style-font(16px, $color, 500, 0, 19px);
+        text-decoration: none;
+        padding-left: 10px;
+    }
+}
+
+.service-market {
+
+    &__btn {
+        cursor: pointer;
+        border-radius: 5px;
+        height: 48px;
+        width: 163px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1.5px solid rgba(21, 12, 1, .1);
+        margin-left: 30px;
+    }
+}
+
+.market {
+
+    &__btn-text {
+        text-decoration: none;
+        @include style-font(16px, #150C01, 500, 0, 19px);
+        padding-left: 10px;
+
+    }
+}
+
+
+// TESTIMONIALS ///////////////////////////////////////////////////////////
+
+.testimonial {
+    height: 500px;
+    margin-top: 100px;  
+    &__body {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100%;
+        // min-width: 0;
+        margin-top: 80px;
+    }
+
+    &__body-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        min-width: 0;
+        width: 506px;
+        height: 300px;
+    }
+
+    &__vocation {
+        @include style-font(12px, #000000, 400, 0, 14px);
+        opacity: 0.7;
+    }
+}
+
+.section-header {
+
+
+    &__description {
+        opacity: 0.7;
+    }
+}
+
+.testimonial-arrows {
+    cursor: pointer;
+}
+
+.testimonial-item {
+
+    &__img {
+        border-radius: 50%;
+    }
+
+    &__description {
+        @include style-font(16px, #000000, 400, 0, 24px);
+        text-align: center;
+        width: 506px;
+    }
+}
+
+.testimonial-name {
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 0;
+        width: 168px;
+        height: 39px;
+    }
+}
+
+.testomonial {
+
+    &__name {
+        @include style-font(16px, #000000, 400, 0, 19px);
+        text-transform: uppercase;
+    }
+}
+
+// CONTACT /////////////////////////////////////////////////////////////// 
+
+.contact {
+    min-height: 448px;
+    background: rgba(220,120,11, .1);
+    margin-top: 120px;
+
+    &__body {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        min-height: 448px;
+
+        .section-header {
+        
+            &__text {
+                max-width: 750px;
+            }
+        }
+    }
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 750px;
+        width: 100%;
+        min-height: 75px;
+        margin-top: 50px;
+    }
+
+    &__email {
+        max-width: 594px;
+        width: 100%;
+        height: 75px;
+        @include style-font(16px, rgba(0, 0, 0, .5), 400, 0, 41px);
+        padding-left: 32px;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        margin-top: 20px;
+
+    }
+
+    &__btn {
+        width: 156px;
+        height: 75px;
+        background: #DC780B;
+        border-radius: 10px;
+        cursor: pointer;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+
+    }
+}
+
+.contact-btn {
+
+    &__text {
+        @include style-font(18px, $color, 500, 0, 41px);
+        text-decoration: none;
+    }
+}
+
+// FOOTER ////////////////////////////////////////////////////////////////// 
+
+.footer {
+    min-height: 429px;
+    background: #252525;
+
+    &__body {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        min-height: 429px;
+
+    }
+
+    &__body-item {
+        min-width: 0;
+        width: 262px;
+        height: 226px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__logo {
+        width: 61px;
+        height: 60px;
+        margin-bottom: 25px;
+    }
+
+    &__text {
+        @include style-font(14px, rgba(100, 100, 100, .9), 400, 0, 17px);
+        margin: 10px 0;
+        cursor: pointer;
+    }
+
+    &__title {
+        font-family: 'Philosopher';
+        @include style-font(18px, $color, 700, 0, 20px);
+        margin-bottom: 16px;
+    }
+}
+
+.footer-icons {
+
+    &__block {
+        width: 124px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+    }
+}
+
+
+
+@import '_adaptive';
