@@ -95,6 +95,34 @@
   display: none;
 }
 
+/* Ограничивающая оболочка */
+.slick-list {
+  overflow: hidden;
+}
+
+/* Лента слайдов */
+.slick-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.slick-next {
+  font-size: 0;
+  border: none;
+  background: url("img/testimonial/right.png") center no-repeat;
+  width: 50px;
+  height: 50px;
+}
+
+.slick-prev {
+  font-size: 0;
+  border: none;
+  background: url("img/testimonial/left.png") center no-repeat;
+  width: 50px;
+  height: 50px;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -157,34 +185,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 35px;
   padding-top: 10px;
   text-align: center;
-}
-
-/* Ограничивающая оболочка */
-.slick-list {
-  overflow: hidden;
-}
-
-/* Лента слайдов */
-.slick-track {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.slick-next {
-  font-size: 0;
-  border: none;
-  background: url("img/testimonial/right.png") center no-repeat;
-  width: 50px;
-  height: 50px;
-}
-
-.slick-prev {
-  font-size: 0;
-  border: none;
-  background: url("img/testimonial/left.png") center no-repeat;
-  width: 50px;
-  height: 50px;
 }
 
 .intro {
@@ -920,6 +920,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer__body-item {
+  min-width: 0;
   width: 262px;
   height: 226px;
   display: -webkit-box;
@@ -1224,6 +1225,9 @@ h1, h2, h3, h4, h5, h6 {
     width: 270px;
     height: 340px;
   }
+  .testimonial-item__description {
+    width: 300px;
+  }
   .contact {
     margin-top: 200px;
   }
@@ -1297,5 +1301,44 @@ h1, h2, h3, h4, h5, h6 {
   .service-market__btn {
     margin-left: 0;
     margin-top: 15px;
+  }
+  .testimonial-item__description {
+    width: 260px;
+  }
+}
+
+@media (max-width: 812px) and (max-height: 414px) {
+  .intro {
+    overflow: visible;
+    height: 130vh;
+  }
+  .intro__body {
+    height: 130vh;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media (max-width: 568px) and (max-height: 320px) {
+  .header__body {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .intro {
+    height: 200vh;
+  }
+  .intro__body {
+    height: 200vh;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }

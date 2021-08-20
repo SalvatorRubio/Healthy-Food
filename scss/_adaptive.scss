@@ -330,6 +330,10 @@
         height: 340px;
     }
 
+    &-item__description {
+        width: 300px;
+    }
+
 }
 
 // CONTACT /////////////////////////////////////////////////////////////// 
@@ -416,5 +420,45 @@
     .service-market__btn {
         margin-left: 0;
         margin-top: 15px;
+    }
+
+
+    // TESTIMONAILS 
+
+    .testimonial {
+        &-item__description {
+            width: 260px;
+        }
+    }
+}
+
+@media (max-width: 812px) and (max-height: 414px) {
+
+    .intro {
+        overflow: visible;
+        height: 130vh;
+
+        &__body {
+            height: 130vh;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+@media (max-width: 568px) and (max-height: 320px) {
+
+    .header__body {
+        justify-content: center;
+    }
+
+    .intro {
+        height: 200vh;
+
+        &__body {
+            height: 200vh;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }
